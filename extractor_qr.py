@@ -91,7 +91,7 @@ def extract(frame, debug=False):
     gray = cv2.GaussianBlur(gray, (BLUR_VALUE, BLUR_VALUE), 0)
     edged = cv2.Canny(gray, 30, 200)
 
-    _, contours, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     squares = []
     square_indices = []
