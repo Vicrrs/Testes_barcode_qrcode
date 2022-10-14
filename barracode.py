@@ -4,8 +4,8 @@ from pyzbar.pyzbar import decode
 
 #img = cv2.imread('gerando_qrcode.png')
 cap = cv2.VideoCapture(0)
-cap.set(3,640)
-cap.set(4,480)
+cap.set(3, 640)
+cap.set(4, 480)
 
 with open('myDataFile.txt') as f:
     myDataList = f.read().splitlines()
@@ -18,19 +18,20 @@ while True:
         print(myData)
 
         if myData in myDataList:
-            myOutput = 'Não funciona'
-            myColor = (0,255,0)
+            myOutput = 'Liberado'
+            myColor = (0, 255, 0)
         else:
-            myOutput = 'Funcionando'
+            myOutput = 'Negado'
             myColor = (0, 0, 255)
 
-        pts = np.array([barcode.polygon],np.int32)
-        pts = pts.reshape((-1,1,2))
-        cv2.polylines(img,[pts],True,myColor,5)
+        pts = np.array([barcode.polygon], np.int32)
+        pts = pts.reshape((-1, 1, 2))
+        cv2.polylines(img, [pts], True, myColor, 5)
         pts2 = barcode.rect
-        cv2.putText(img,myOutput,(pts2[0],pts2[1]),cv2.FONT_HERSHEY_SIMPLEX,
-                    0.9,myColor,2)
+        cv2.putText(img, myOutput, (pts2[0], pts2[1]), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.9, myColor, 2)
 
-    cv2.imshow('Result',img)
-    cv2.waitKey(1)
-
+    cv2.imshow('Result', img)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        print('Sai')
+        break

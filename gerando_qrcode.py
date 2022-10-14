@@ -7,9 +7,9 @@ qr = qrcode.QRCode(
     border=2
 )
 
-qr.add_data('https://www.youtube.com/channel/UCjNM_y5b1OVzANf4sXh8rug')
+qr.add_data('111113_teste')
 qr.make(fit=True)
 
 img = qr.make_image(fill_color='black', black_color='white')
 
-img.save('qrcode_canal.png')
+img.save('qrteste.png')
