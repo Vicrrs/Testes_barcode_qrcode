@@ -4,11 +4,11 @@ from os import listdir
 import glob
 from matplotlib import pyplot as plt
 import cv2
- 
+
 # obter o caminho/diretório00
 folder_dir = "/home/roza/PycharmProjects/PoC_junior/imgs"
 for images in os.listdir(folder_dir):
- 
+
     # verifique se a imagem termina com png
     if (images.endswith(".png")):
         print(images)
@@ -20,3 +20,4 @@ for images in os.listdir(folder_dir):
         data.append(img)
         plt.figure()
         plt.imshow(img)
+        plt.show()
