@@ -19,6 +19,9 @@ for images in os.listdir(folder_dir):
     for f1 in files:
         reval, points, s_qr = detector.detectAndDecode(cv2.imread(f1))
         img = cv2.imread(f1)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            print('Sai')
+            break
         data.append(reval)
         plt.figure()
         plt.imshow(img)

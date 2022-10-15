@@ -1,10 +1,10 @@
 import cv2
 # read the QRCODE image
-img = cv2.imread("qrcode_canal.png")
+img = cv2.VideoCapture(0)
 # initialize the cv2 QRCode detector
-detector = cv2.QRCodeDetector()
+detector = cv2.QRCodeDetector(img)
 # detect and decode
-data, bbox, straight_qrcode = detector.detectAndDecode(img)
+data, bbox, straight_qrcode = detector.detectAndDecode()
 # if there is a QR code
 if bbox is not None:
     print(f"QRCode data:\n{data}")
