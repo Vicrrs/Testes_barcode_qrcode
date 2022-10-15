@@ -5,6 +5,7 @@ import glob
 from matplotlib import pyplot as plt
 import cv2
 
+detector = cv2.QRCodeDetector()
 # obter o caminho/diretório00
 folder_dir = "/home/roza/PycharmProjects/PoC_junior/imgs"
 for images in os.listdir(folder_dir):
@@ -16,8 +17,11 @@ for images in os.listdir(folder_dir):
     files = glob.glob(data_path)
     data = []
     for f1 in files:
+        reval, points, s_qr = detector.detectAndDecode(cv2.imread(f1))
         img = cv2.imread(f1)
-        data.append(img)
+        data.append(reval)
         plt.figure()
         plt.imshow(img)
         plt.show()
+        print("Pontos")
+        print(points)
