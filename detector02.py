@@ -3,11 +3,12 @@ import os
 from os import listdir
 import glob
 from matplotlib import pyplot as plt
+from pathlib import Path
 import cv2
 
 detector = cv2.QRCodeDetector()
 # obter o caminho/diretório00
-folder_dir = "/home/roza/PycharmProjects/PoC_junior/imgs"
+folder_dir = Path("/home/roza/PycharmProjects/PoC_junior/imgs")
 for images in os.listdir(folder_dir):
 
     # verifique se a imagem termina com png
