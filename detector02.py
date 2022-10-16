@@ -11,7 +11,7 @@ folder_dir = "/home/roza/PycharmProjects/PoC_junior/imgs"
 for images in os.listdir(folder_dir):
 
     # verifique se a imagem termina com png
-    if (images.endswith(".png")):
+    if (images.endswith(".jpg")):
         print(images)
     data_path = os.path.join(folder_dir, '*g')
     files = glob.glob(data_path)
@@ -26,5 +26,4 @@ for images in os.listdir(folder_dir):
         plt.figure()
         plt.imshow(img)
         plt.show()
-        print("Pontos")
-        print(points)
+        print("Pontos: \n", points)
