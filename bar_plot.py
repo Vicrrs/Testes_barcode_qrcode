@@ -6,7 +6,7 @@ y = [0,42,39,49]
 #plt.plot(x, y, "r--")
 plt.barh(x, y, align='center', alpha=0.5)
 
-plt.title("Bar chart", fontdict={'family': 'monospace', 'color' : 'red','weight': 'bold','size': 16},loc='center')
+plt.title("Gráfico da quantidade de acerto de cada script testado", fontdict={'family': 'monospace', 'color' : 'red','weight': 'bold','size': 16},loc='center')
 
 
 plt.xlabel('Funcionalidade')
