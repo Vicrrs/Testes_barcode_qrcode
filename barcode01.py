@@ -49,7 +49,7 @@ def run() -> None:
                     cv.putText(frame, result.barcode_text, points[0], cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255))
 
         if len(barcodeTasks) < threadn:
-            task = pool.apply_async(process_frame, (frame.copy(),))
+            task = pool.apply_async(process_frame, (frame.copy(), ))
             barcodeTasks.append(task)
 
         cv.imshow('Barcode & QR Code Scanner', frame)
