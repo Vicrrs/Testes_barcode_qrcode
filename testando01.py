@@ -3,7 +3,7 @@ from pyzbar.pyzbar import decode, ZBarSymbol
 
 # Image.open('barcode1.png')  # if use PIL library
 im = cv2.imread(
-    "/home/roza/PycharmProjects/PoC_junior/imgs/qrheitor.png")  # if use cv2
+    "/home/roza/PycharmProjects/PoC_junior/imgs/qr060.jpg")  # if use cv2
 
 # codes = decode(im, symbols=[ZBarSymbol.QRCODE])  # specify code type
 codes = decode(im)  # auto detect code type
